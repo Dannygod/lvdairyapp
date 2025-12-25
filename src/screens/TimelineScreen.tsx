@@ -17,74 +17,81 @@ import Header from '../components/Header';
 import { DayCounter, MilestoneItem, AnnualRecap } from '../components/Timeline';
 import { Button } from '../components/Button';
 
-// Sample milestones data
+// Sample milestones data - 紅豆與牛奶的時間軸
 const SAMPLE_MILESTONES = [
   {
     id: '1',
     type: 'first_date' as const,
-    title: 'Our First Date',
-    date: 'July 15, 2023',
-    description: 'Coffee at the little café downtown. I was so nervous, but when you laughed at my terrible joke, I knew everything would be okay.',
+    title: '第一次認識聊天',
+    date: '2024年11月20日',
+    description: '一切的開始。命運讓我們相遇，從此我的世界多了一抹甜甜的牛奶色。',
   },
   {
     id: '2',
     type: 'first_kiss' as const,
-    title: 'First Kiss',
-    date: 'July 28, 2023',
-    description: 'Under the stars at the beach. Time stopped for just that moment.',
+    title: '第一次見面',
+    date: '2024年11月26日（星期三晚上）',
+    description: '終於見到本人了！她說我通過考試，要幫我取名叫紅豆。紅豆配牛奶，最搭了。',
   },
   {
     id: '3',
     type: 'travel' as const,
-    title: 'Road Trip to the Mountains',
-    date: 'September 5, 2023',
-    description: 'Our first adventure together. Getting lost on those mountain roads was the best thing that ever happened to us.',
+    title: '第一次咖啡廳約會',
+    date: '2024年11月29日',
+    description: '第一次一起去咖啡廳，第一次一起吃飯。發現她不會跟我計較小錢、願意分享故事、很會照顧人、做事很認真（打字超快）。',
   },
   {
     id: '4',
-    type: 'first_argument' as const,
-    title: 'We Worked Through It',
-    date: 'October 12, 2023',
-    description: 'Our first real disagreement, but we learned how to communicate better. It made us stronger.',
+    type: 'custom' as const,
+    title: '貓咖＆夜市約會',
+    date: '2024年12月2日',
+    description: '去貓咖、逛夜市、牽小手手、喝同一杯奶昔、載她回家。這天好幸福。🐱',
   },
   {
     id: '5',
-    type: 'anniversary' as const,
-    title: '6 Month Anniversary',
-    date: 'January 15, 2024',
-    description: 'Half a year of love, laughter, and growing together. Here\'s to many more.',
+    type: 'travel' as const,
+    title: '中山咖啡廳＆逛街',
+    date: '2024年12月6日',
+    description: '去中山咖啡廳、買衣服、逛街、吃居酒屋！巧遇之前同學。她買了我的外套和褲子，好感動。',
   },
   {
     id: '6',
-    type: 'birthday' as const,
-    title: 'Your Birthday Surprise',
-    date: 'March 22, 2024',
-    description: 'The look on your face when you walked into the surprise party was priceless!',
+    type: 'anniversary' as const,
+    title: '開始每天打電話',
+    date: '2024年12月8日',
+    description: '雖然有時候太忙沒辦法，但開始每天打電話了。聽到她的聲音就覺得很安心。',
   },
   {
     id: '7',
-    type: 'moved_in' as const,
-    title: 'Moving In Together',
-    date: 'June 1, 2024',
-    description: 'Our little apartment became a home the moment we were both in it.',
+    type: 'custom' as const,
+    title: '小紅書咖啡廳讀書',
+    date: '2024年12月9日',
+    description: '去小紅書推薦的咖啡廳，一起讀書、牽手手。她認真的樣子好可愛。',
   },
   {
     id: '8',
-    type: 'anniversary' as const,
-    title: 'One Year Anniversary',
-    date: 'July 15, 2024',
-    description: 'One year of falling more in love every single day. You\'re my favorite person.',
+    type: 'travel' as const,
+    title: '蛋包飯＆東門河粉',
+    date: '2024年12月14日',
+    description: '一起吃蛋包飯，然後去東門吃河粉。她說很好吃，看她開心我也開心。',
+  },
+  {
+    id: '9',
+    type: 'custom' as const,
+    title: 'Zara購物＆看電影',
+    date: '2024年12月20日',
+    description: '去買Zara、看電影、逛街。和她在一起的時間總是過得特別快。',
   },
 ];
 
 const ANNUAL_RECAP = {
   year: 2024,
   highlights: {
-    totalDays: 365,
-    diaryEntries: 248,
-    photos: 1247,
-    topMoods: ['🥰', '☕', '✨', '💕'],
-    averageLoveIndex: 89,
+    totalDays: 35,
+    diaryEntries: 12,
+    photos: 28,
+    topMoods: ['🥰', '☕', '🐱', '💕'],
+    averageLoveIndex: 95,
   },
 };
 
@@ -95,7 +102,7 @@ const TimelineScreen: React.FC = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [viewMode, setViewMode] = useState<'timeline' | 'calendar'>('timeline');
 
-  const startDate = new Date('2023-07-15');
+  const startDate = new Date('2024-11-20');
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -105,8 +112,8 @@ const TimelineScreen: React.FC = () => {
   return (
     <View style={{ flex: 1, backgroundColor: colors.cream.light }}>
       <Header
-        title="Our Timeline"
-        subtitle="Every moment matters"
+        title="紅豆與牛奶的時間軸"
+        subtitle="每個瞬間都值得珍藏"
         rightActions={[
           { icon: 'add-circle-outline', onPress: () => {} },
           { icon: 'share-outline', onPress: () => {} },
@@ -208,7 +215,7 @@ const TimelineScreen: React.FC = () => {
               color: colors.text.primary,
             }}
           >
-            Our Milestones
+            我們的里程碑
           </Text>
           <TouchableOpacity
             style={{
@@ -223,7 +230,7 @@ const TimelineScreen: React.FC = () => {
                 marginRight: spacing.xxs,
               }}
             >
-              Add New
+              新增
             </Text>
             <Ionicons name="add" size={18} color={colors.primary.rose} />
           </TouchableOpacity>

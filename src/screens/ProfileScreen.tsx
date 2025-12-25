@@ -101,16 +101,16 @@ const ProfileScreen: React.FC = () => {
   const [dailyReminder, setDailyReminder] = useState(true);
 
   const stats = {
-    diaryEntries: 248,
-    photos: 1247,
-    challenges: 15,
-    streakDays: 12,
+    diaryEntries: 12,
+    photos: 28,
+    challenges: 3,
+    streakDays: 35,
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.cream.light }}>
       <Header
-        title="Us"
+        title="我們"
         rightAction={{ icon: 'settings-outline', onPress: () => {} }}
       />
 
@@ -132,8 +132,8 @@ const ProfileScreen: React.FC = () => {
           }}
         >
           <CoupleAvatar
-            partner1={{ name: 'You' }}
-            partner2={{ name: 'Sarah' }}
+            partner1={{ name: '紅豆' }}
+            partner2={{ name: '牛奶' }}
             size="xl"
           />
           <Text
@@ -145,7 +145,7 @@ const ProfileScreen: React.FC = () => {
               marginTop: spacing.lg,
             }}
           >
-            You & Sarah 💕
+            紅豆 & 牛奶 💕
           </Text>
           <Text
             style={{
@@ -154,7 +154,7 @@ const ProfileScreen: React.FC = () => {
               marginTop: spacing.xs,
             }}
           >
-            Together since July 15, 2023
+            在一起的日子：2024年11月20日起
           </Text>
 
           {/* Stats */}
@@ -225,7 +225,7 @@ const ProfileScreen: React.FC = () => {
           </View>
 
           <Button
-            title="Edit Couple Profile"
+            title="編輯資料"
             onPress={() => {}}
             variant="soft"
             size="small"
@@ -252,7 +252,7 @@ const ProfileScreen: React.FC = () => {
               ...shadows.sm,
             }}
           >
-            <Avatar name="You" size="lg" showBorder />
+            <Avatar name="紅豆" size="lg" showBorder />
             <Text
               style={{
                 fontSize: 15,
@@ -261,7 +261,7 @@ const ProfileScreen: React.FC = () => {
                 marginTop: spacing.sm,
               }}
             >
-              You
+              紅豆 🫘
             </Text>
             <Text
               style={{
@@ -269,7 +269,7 @@ const ProfileScreen: React.FC = () => {
                 color: colors.text.tertiary,
               }}
             >
-              View Profile
+              查看資料
             </Text>
           </TouchableOpacity>
 
@@ -284,7 +284,7 @@ const ProfileScreen: React.FC = () => {
               ...shadows.sm,
             }}
           >
-            <Avatar name="Sarah" size="lg" showBorder />
+            <Avatar name="牛奶" size="lg" showBorder />
             <Text
               style={{
                 fontSize: 15,
@@ -293,7 +293,7 @@ const ProfileScreen: React.FC = () => {
                 marginTop: spacing.sm,
               }}
             >
-              Sarah
+              牛奶 🥛
             </Text>
             <Text
               style={{
@@ -301,7 +301,7 @@ const ProfileScreen: React.FC = () => {
                 color: colors.text.tertiary,
               }}
             >
-              View Profile
+              查看資料
             </Text>
           </TouchableOpacity>
         </View>
