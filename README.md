@@ -90,7 +90,7 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 18+（**建議 Node 20 LTS**；本專案使用 Expo SDK 50，使用 Node 22 可能導致 Metro 檔案監看問題）
 - Expo CLI
 - iOS Simulator or Android Emulator (or Expo Go app)
 
@@ -109,6 +109,16 @@ npm run ios
 # Run on Android
 npm run android
 ```
+
+## 如果遇到 Metro `EMFILE: too many open files, watch`
+
+這通常代表系統可用的檔案監看/FD 數量不足（Metro 使用 NodeWatcher 時特別容易發生）。
+
+- **已內建緩解**：本專案 `npm start` 會先嘗試執行 `ulimit -n 10000` 後再啟動 Expo。
+- **推薦做法**：
+  - 使用 Node 20（見 `.nvmrc`）
+  - 安裝並啟用 watchman（macOS 可用 Homebrew 安裝），讓 Metro 使用 watchman 監看檔案
+  - 若仍遇到問題，請在同一個終端機先手動執行 `ulimit -n 10000` 再跑 `npm start`
 
 ## Key Components
 
