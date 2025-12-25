@@ -83,11 +83,10 @@ export const DayCounter: React.FC<DayCounterProps> = ({ startDate, style }) => {
           fontWeight: '500',
           color: colors.text.secondary,
           letterSpacing: 2,
-          textTransform: 'uppercase',
           marginBottom: spacing.xs,
         }}
       >
-        Together for
+        在一起
       </Text>
       <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
         <Text
@@ -108,7 +107,7 @@ export const DayCounter: React.FC<DayCounterProps> = ({ startDate, style }) => {
             marginLeft: spacing.xs,
           }}
         >
-          days
+          天
         </Text>
       </View>
       <Text
@@ -118,11 +117,11 @@ export const DayCounter: React.FC<DayCounterProps> = ({ startDate, style }) => {
           marginTop: spacing.xs,
         }}
       >
-        Since {startDate.toLocaleDateString('en-US', {
+        從 {startDate.toLocaleDateString('zh-TW', {
+          year: 'numeric',
           month: 'long',
-          day: 'numeric',
-          year: 'numeric'
-        })}
+          day: 'numeric'
+        })} 開始
       </Text>
 
       {/* Heart decoration */}

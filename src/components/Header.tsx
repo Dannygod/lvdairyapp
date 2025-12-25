@@ -270,9 +270,9 @@ export const GreetingHeader: React.FC<GreetingHeaderProps> = ({
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return 'Good morning';
-    if (hour < 18) return 'Good afternoon';
-    return 'Good evening';
+    if (hour < 12) return '早安';
+    if (hour < 18) return '午安';
+    return '晚安';
   };
 
   return (
@@ -309,7 +309,7 @@ export const GreetingHeader: React.FC<GreetingHeaderProps> = ({
               marginTop: spacing.xxs,
             }}
           >
-            Our Love Story
+            紅豆與牛奶的日記
           </Text>
           {daysTogether && (
             <Text
@@ -319,7 +319,7 @@ export const GreetingHeader: React.FC<GreetingHeaderProps> = ({
                 marginTop: spacing.xxs,
               }}
             >
-              Day {daysTogether} together ✨
+              在一起的第 {daysTogether} 天 ✨
             </Text>
           )}
         </View>
